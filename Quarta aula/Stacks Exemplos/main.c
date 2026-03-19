@@ -1,12 +1,13 @@
 #include<stdio.h>
 #include"pilha.h"
+#include<stdbool.h>
 
 int main(){
     Pilha *p = criarPilha();
     int op;
     int valor;
     do{
-        printf("1 - Push\n2 - Pop\n3 - Acesso ao topo\n4 - Ver tamanho\n5 - Ver capacidade\n6 - Sair\n");
+        printf("1 - Push\n2 - Pop\n3 - Acesso ao topo\n4 - Ver tamanho\n5 - Ver capacidade\n6 - Verificar parenteses\n7 - sair\n");
         scanf("%d", &op);
         switch(op){
             case 1:
@@ -26,12 +27,16 @@ int main(){
             case 5:
                 VerCapacidade(p);
                 break;
-            case 6:
-                DestruirPilha(p);
+            case 6:  
+                VParenteses(p);
+                break;
+            case 7:
+                p = DestruirPilha(p);
                 break;
             default:
                 printf("Opção inválida. Tente novamente.\n");
+                break;
         }
-    } while(op != 6);
+    } while(op != 7);
     return 0;
 }
