@@ -6,6 +6,6 @@
 
 [Terceira Aula](https://github.com/GabrielJobs1/ED1/tree/main/Terceira%20aula).
 
-[Quarta Aula](https://github.com/GabrielJobs1/ED1/tree/main/Quarta%20aula/Stacks%20Exemplos)
+[Quarta Aula](https://github.com/GabrielJobs1/ED1/tree/main/Quarta%20aula/Stacks%20Exemplos).
 
-[Quinta Aula](https://github.com/GabrielJobs1/ED1/tree/main/Quinta%20aula)
+[Quinta Aula](https://github.com/GabrielJobs1/ED1/tree/main/Quinta%20aula).
