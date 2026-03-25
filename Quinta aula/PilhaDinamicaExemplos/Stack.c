@@ -85,6 +85,16 @@ void Stack_destroy(Stack* p){
     free(p);
 }
 
+void StackDestroySemPop(Stack* p){
+    TNo* aux = p -> topo;
+    while(aux != NULL){
+        TNo* temp = aux;
+        aux = aux -> prox;
+        free(temp);
+    }
+    free(p);
+}
+
 //Auxiliares
 /**
  * Devolve a quantidade de elementos atuais da pilha.
