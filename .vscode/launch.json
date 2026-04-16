@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "c:/Users/PC GABRIEL/Desktop/ED-1/Sexta aula/Lista Stacks/EX01",
+      "program": "c:/Users/PC GABRIEL/Desktop/ED-1/Sexta aula/Lista Stacks/EX01/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
