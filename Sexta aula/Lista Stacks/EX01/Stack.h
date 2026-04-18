@@ -1,12 +1,17 @@
 #ifndef STACK_H
 #define STACK_H
+#define MAX 120
 
-typedef struct Stack Stack;
+typedef struct _stack Stack;
 
-Stack* CriarPilha(void);
-void LerString(Stack *s, char c[]);
-void PrintarInverso(Stack *s);
+Stack* create_stack();
+
+void push(Stack*, char);
+
+char pop(Stack*);
+
+void inverter_frase(char*);
+
+void printar_frase(Stack*);
 
 #endif
-
-

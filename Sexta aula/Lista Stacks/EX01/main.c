@@ -1,15 +1,12 @@
 #include <stdio.h>
 #include "Stack.h"
-
+#include <string.h>
 int main() {
-    Stack *s = CriarPilha();
-    char c[40];
-
-    printf("Digite uma palavra:\n");
-    scanf("%[^\n]", c);
-
-    LerString(s, c);
-    PrintarInverso(s);
-
+    char frase[MAX];
+    printf("Digite uma frase: ");
+    scanf("%[^\n]", frase);
+    
+    inverter_frase(frase);
+    
     return 0;
 }

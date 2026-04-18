@@ -1,43 +1,55 @@
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "Stack.h"
 
-struct Stack{
-    char str[40];
+typedef struct _stack {
+    char letras[MAX];
     int topo;
-};
+} Stack;
 
-Stack* CriarPilha(){
-    Stack *s = (Stack*)malloc(sizeof(Stack));
-    if(s != NULL){
+
+Stack* create_stack() {
+    Stack* s = malloc(sizeof(Stack));
+    if(s != NULL) {
         s->topo = -1;
-        return s;
+    }
+    return s;
+}
+
+void push(Stack *s, char c) {
+    if (s->topo < MAX - 1) {
+        s->topo++;
+        s->letras[s->topo] = c;
     }
 }
 
-void LerString(Stack *s, char c[]){
-    for(int i=0; i < strlen(c);i++){
-        if(s->topo < 39){
-            if(c[i] == '.'){
+char pop(Stack *s) {
+    if (s->topo != -1) {
+       return s->letras[s->topo--];
+    }
+    return '\0';
+}
+
+void inverter_frase(char frase[]) {
+    Stack *aux = create_stack();
+    
+    printf("Frase Invertida: ");
+    
+    for (int i = 0; i <= strlen(frase); i++) {
+        if (frase[i] == ' ' || frase[i] == '\0' || frase[i] == '.') {
+            while (aux->topo != -1) {
+                printf("%c", pop(aux));
+            }
+            if (frase[i] == ' ') printf(" ");
+            if (frase[i] == '.') {
+                printf(".");
                 break;
             }
-            s->topo++;
-            s->str[s->topo] = c[i];
-        }else{
-            printf("pilha cheia!\n");
-            break;
+        } else {
+            push(aux, frase[i]);
         }
     }
-}
-
-
-void PrintarInverso(Stack *s){
-    printf("Palavra invertida:\n");
-    while(s->topo >= 0){
-        printf("%c", s->str[s->topo]);
-        s->topo--;
-    }
     printf("\n");
-    free(s);
+    free(aux);
 }
