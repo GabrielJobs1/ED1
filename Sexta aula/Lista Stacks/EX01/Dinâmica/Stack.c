@@ -30,7 +30,7 @@ void push(Stack *s, char c){
       s->topo = aux;
       s->qty++;
     }
-    
+    free(aux);
 }
 
 char pop(Stack *s){
